@@ -62,7 +62,6 @@ function mergeWithMeta(row: { id: string; name: string; points: number }): Chara
 export default function HeroCarousel() {
   const [characters, setCharacters] = useState<Character[]>(FALLBACK_CHARACTERS);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [dbReady, setDbReady] = useState(false);
   const animLock = useRef(false);
@@ -131,13 +130,11 @@ export default function HeroCarousel() {
   const navigate = useCallback((dir: 'next' | 'prev') => {
     if (animLock.current) return;
     animLock.current = true;
-    setIsAnimating(true);
     setActiveIndex((prev) =>
       dir === 'next' ? (prev + 1) % COUNT : (prev + COUNT - 1) % COUNT,
     );
     setTimeout(() => {
       animLock.current = false;
-      setIsAnimating(false);
     }, DURATION);
   }, []);
 
