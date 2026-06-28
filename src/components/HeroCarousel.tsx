@@ -18,11 +18,11 @@ interface Character {
 /*  Static visual config (not stored in DB)                            */
 /* ------------------------------------------------------------------ */
 const CHARACTER_META: Record<string, Omit<Character, 'id' | 'name' | 'points'>> = {
-  andres:    { src: '/avatars/andres.png',    bg: '#4A4A4A', panel: '#6B6B6B' },
-  mario:     { src: '/avatars/mario.png',     bg: '#8B9467', panel: '#A2AB7D' },
-  ivan:      { src: '/avatars/ivan.png',      bg: '#EADBB6', panel: '#F2E8D0' },
-  alejandro: { src: '/avatars/alejandro.png', bg: '#88C9A1', panel: '#A3D6B7' },
-  natalia:   { src: '/avatars/natalia.png',   bg: '#E882B4', panel: '#ED9DC4' },
+  andres:    { src: './avatars/andres.png',    bg: '#4A4A4A', panel: '#6B6B6B' },
+  mario:     { src: './avatars/mario.png',     bg: '#8B9467', panel: '#A2AB7D' },
+  ivan:      { src: './avatars/ivan.png',      bg: '#EADBB6', panel: '#F2E8D0' },
+  alejandro: { src: './avatars/alejandro.png', bg: '#88C9A1', panel: '#A3D6B7' },
+  natalia:   { src: './avatars/natalia.png',   bg: '#E882B4', panel: '#ED9DC4' },
 };
 
 const FALLBACK_CHARACTERS: Character[] = [
